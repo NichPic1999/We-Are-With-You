@@ -1,0 +1,118 @@
+
+.body-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: radial-gradient(circle, rgba(255, 255, 255, 1) 18%, rgba(255, 230, 248, 1) 49%, rgba(184, 245, 255, 1) 89%);
+}
+
+.sign-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  flex-direction: column;
+}
+
+
+.sign-container form {
+  width: 100%;
+  max-width: 300px;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  background-color: rgba(255, 255, 255, 0.937);
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Stile per le etichette dei campi */
+.sign-container form label {
+  margin-top: 1rem; /* Distanza dalla parte superiore */
+}
+
+/* Stile per i campi di input */
+.sign-container form input {
+  padding: 0.5rem;
+  margin-top: 0.5rem; /* Distanza tra il campo e il campo precedente */
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+/* Stile per i pulsanti */
+.sign-container .btn {
+  padding: 0.75rem;
+  margin-top: 1rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+/* Pulsante di invio specifico con colore personalizzato */
+.sign-container .btn-signin {
+  background-color: #4a90e2;
+  color: white;
+}
+
+.shade{
+  background-color: linear-gradient(to bottom, white 50%, rgba(255, 255, 255, 0) 100%);
+  border: 1px solid #000;
+}
+
+.header {
+  margin-bottom: 20px;
+}
+
+
+.text-error {
+  color: black;
+  font-size: 10px;
+}
+
+.text-neutral{
+  color: black;
+  font-size: 10px;
+}
+
+/* Colore verde per i criteri soddisfatti */
+.text-success {
+  color: green;
+  font-size: 9px;
+}
+
+.success-message {
+  color: green;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  font-size: 10px;
+}
+
+
+.circular-background {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100px;
+  height: 100px;
+  margin: 0 auto 20px auto; /* Centra e aggiunge spazio sotto */
+  background: #4a90e2; /* Colore dello sfondo circolare */
+  border-radius: 50%; /* Rende il contenitore circolare */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Aggiunge ombra */
+}
+
+.sign-title {
+  color: white; /* Colore del testo */
+  font-size: 20px;
+  font-weight: bold;
+  text-align: center;
+  margin: 0;
+}
+

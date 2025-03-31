@@ -1,0 +1,111 @@
+.container {
+  flex-direction: row;
+  align-items: flex-start ;
+  height: 410px;
+  overflow: visible;
+  margin: auto;
+}
+
+
+/* Container che contiene il bottone */
+.container {
+  text-align: start;
+  margin-left: 3%;
+  min-height: calc(100vh - 257px);
+}
+
+
+.sidebar {
+  width: 200px;
+  background-color: rgba(131, 210, 236, 0.8);
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  position: fixed; /* Fissa la sidebar alla finestra */
+  left: -250px; /* Posiziona la sidebar fuori dalla vista */
+  top: 0; /* Assicura che la sidebar parta dall'alto */
+  height: 100%; /* Assicura che la sidebar occupi l'intera altezza */
+  transition: left 0.3s ease; /* Aggiungi una transizione per il movimento */
+}
+
+/* Quando la sidebar è aperta */
+.sidebar.open {
+  left: 0; /* Porta la sidebar in vista */
+}
+
+/* Stili per i pulsanti all'interno della sidebar */
+.sidebar button {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  background-color: #444;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  border-radius: 20px;
+}
+
+/* Effetto hover per i pulsanti nella sidebar */
+.sidebar button:hover {
+  background-color: #555;
+}
+
+/* Stili per l'icona che apre/chiude la sidebar */
+.sidebar-toggle-icon {
+  position: fixed;               /* Posizione fissa */
+  display: flex;                /* Attiva il layout flexbox */
+  justify-content: center;      /* Centra l'icona orizzontalmente */
+  align-items: center;          /* Centra l'icona verticalmente */
+  left: 50px;                  /* Distanza dal lato sinistro, maggiore della larghezza della sidebar */
+  top: 30px;                    /* Distanza dall'alto */
+  cursor: pointer;              /* Cambia il cursore al passaggio del mouse */
+  background-color: rgba(131, 210, 236, 0.8); /* Sfondo blu semi-trasparente */
+  border-radius: 50%;           /* Rende l'icona rotonda */
+  padding: 15px;                /* Aumenta il padding per un'area cliccabile più grande */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Ombra per profondità */
+  transition: transform 0.3s ease; /* Aggiungi transizione per il movimento */
+  width: 50px;
+  height: 50px;
+}
+
+
+/* Stili per il movimento dell'icona */
+.move-right {
+  transform: translateX(200px); /* Sposta l'icona verso destra quando la sidebar è aperta */
+}
+
+.move-left {
+  transform: translateX(0); /* Posizione originale quando la sidebar è chiusa */
+}
+
+/* Dimensioni SVG */
+.sidebar-toggle-icon svg {
+  width: 80%; /* Rende l'icona SVG al 100% della larghezza del contenitore */
+  height: 80%; /* Rende l'icona SVG al 100% dell'altezza del contenitore */
+}
+
+.button-container {
+  display: flex;
+  flex-direction: column; /* Dispone i bottoni in una colonna */
+  gap: 10px; /* Distanza tra i bottoni */
+  align-items: center; /* Centra i bottoni orizzontalmente */
+  margin-top: 2%; /* Distanza sopra i bottoni */
+}
+
+.button-container .btn {
+  width: 200px; /* Limita la larghezza dei bottoni */
+  max-width: 100%; /* Limita la larghezza ai limiti dello schermo */
+  padding: 10px; /* Padding per i bottoni */
+  text-align: center; /* Centra il testo nei bottoni */
+  background-color: #45a049;
+  color:white;
+  border-radius: 20px;
+}
+
+/* Effetto hover per il bottone */
+.btn:hover {
+  background-color: #45a049;  /* Colore più scuro quando il mouse è sopra */
+}

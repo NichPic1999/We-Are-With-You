@@ -1,0 +1,82 @@
+.footer {
+  background: radial-gradient(circle, rgba(255,255,255,1) 18%, rgba(255,230,248,1) 49%, rgba(184,245,255,1) 89%);
+  color: black;
+  padding: 20px 0;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center; /* Allineamento verticale al centro */
+  max-width: 1200px; /* Limitiamo la larghezza massima */
+  margin: 0 auto; /* Centriamo il contenuto */
+}
+
+.footer-left, .footer-middle, .footer-right {
+  flex: 1; /* Ogni sezione occupa lo stesso spazio */
+  text-align: center; /* Centra il contenuto */
+}
+
+.footer-left h5 {
+  margin: 0; /* Rimuoviamo margini non necessari */
+}
+
+.footer-middle {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px; /* Spaziatura uniforme tra i link */
+}
+
+.footer-middle a {
+  color: black;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-middle a:hover {
+  color: #555; /* Colore hover per i link */
+}
+
+.footer-right {
+  display: flex;
+  justify-content: center;
+  gap: 15px; /* Spaziatura uniforme tra le icone */
+}
+
+.footer-right a {
+  font-size: 24px;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.footer-right a:hover {
+  transform: scale(1.1); /* Leggera ingrandimento all'hover */
+}
+
+.footer-right a i {
+  margin: 0;
+}
+
+.footer-right a.facebook {
+  color: #4267B2;
+}
+
+.footer-right a.twitter {
+  color: #1DA1F2;
+}
+
+.footer-right a.instagram {
+  color: #E1306C;
+}
+
+.footer-right a.facebook:hover {
+  color: #365899;
+}
+
+.footer-right a.twitter:hover {
+  color: #0d95e8;
+}
+
+.footer-right a.instagram:hover {
+  color: #bc2a8d;
+}

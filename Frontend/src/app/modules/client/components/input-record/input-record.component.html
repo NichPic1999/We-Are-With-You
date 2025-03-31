@@ -1,0 +1,74 @@
+<h2 class="initial-titol">
+  {{ mode === "create" ? "New Report" : "Modify Report" }}
+</h2>
+
+<div class="form-container">
+  <div class="form-description">
+    <label>Help us understand who abused you:</label>
+  </div>
+  <!-- Form del perpetrator -->
+
+  <div class="form-group">
+    <form [formGroup]="form">
+      <label for="email">Email (now mandatory):</label>
+      <input type="text" id="email" name="email" formControlName="email" />
+
+      <label for="telephone">Telephone number:</label>
+      <input
+        type="text"
+        id="telephone"
+        name="telephone"
+        formControlName="telephone"
+      />
+
+      <label for="socialMedia">URL social media:</label>
+      <input
+        type="text"
+        id="socialMedia"
+        name="socialMedia"
+        formControlName="socialMedia"
+      />
+
+      <div
+        *ngIf="formSubmitted && form.errors?.['atLeastOneRequired']"
+        style="color: red"
+      >
+        Devi compilare almeno uno dei campi.
+      </div>
+    </form>
+  </div>
+
+  <!-- Form dei details -->
+  <div class="form-group">
+    <form [formGroup]="detForm">
+    <label>Details:</label>
+    <textarea
+      id="details"
+      name="details"
+      rows="8"
+      cols="70"
+      placeholder="Enter details here..."
+      formControlName="details"
+    ></textarea>
+  </form>
+  </div>
+</div>
+
+<!-- Bottoni sotto il form -->
+<div>
+  <button (click)="close()" class="close-btn">Chiudi</button>
+  <button
+    *ngIf="mode === 'create'"
+    (click)="onSubmitReport()"
+    type="submit"
+    class="submit-btn"
+  >
+    Send Report
+  </button>
+  <button *ngIf="mode === 'edit'" (click)="onUpdateReport()" class="modify-btn">
+    Modify Report
+  </button>
+  <button *ngIf="mode === 'edit'" (click)="deleteReport()" class="delete-btn">
+    Delete Report
+  </button>
+</div>

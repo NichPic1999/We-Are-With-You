@@ -1,0 +1,238 @@
+html, body {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Stile del contenitore principale */
+.container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  min-height: calc(100vh - 110px);
+  width: 100%;
+  overflow: visible;
+  margin: auto;
+  text-align: start;
+}
+
+.main-content {
+  flex: 1;
+  overflow-y: auto;
+  padding-bottom: 20px;
+}
+
+/* Stile per il div che contiene il bottone */
+.div-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px 0;
+  width: 100%;
+  text-align: center;
+}
+
+/* Stili per il bottone */
+button {
+  background-color: green;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  display: inline-block;
+  max-width: 300px;
+  width: 100%;
+}
+
+/* Effetto hover per il bottone */
+button:hover {
+  background-color: darkgreen; /* Cambia colore a un verde più scuro quando si passa sopra */
+}
+
+/* Stile per i cerchi (in caso di selezione) */
+.circle {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: gray; /* Colore predefinito */
+  margin-right: 10px;
+}
+
+/* Evidenzia l'elemento selezionato */
+.selected .circle {
+  background-color: green; /* Colore quando selezionato */
+}
+
+/* Stile per la parte centrale */
+.centered {
+  display: flex;
+  justify-content: center;
+  margin-top: 60%;
+}
+
+/* Stile per la sidebar */
+.sidebar {
+  width: 200px;
+  background-color: rgba(131, 210, 236, 0.8);
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  position: fixed;
+  left: -250px;
+  top: 0;
+  height: 100%;
+  transition: left 0.3s ease;
+}
+
+/* Quando la sidebar è aperta */
+.sidebar.open {
+  left: 0;
+}
+
+/* Stili per i pulsanti all'interno della sidebar */
+.sidebar button {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  background-color: #444;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+/* Effetto hover per i pulsanti nella sidebar */
+.sidebar button:hover {
+  background-color: #555;
+}
+
+/* Stili per l'icona che apre/chiude la sidebar */
+.sidebar-toggle-icon {
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  left: 50px;
+  top: 30px;
+  cursor: pointer;
+  background-color: rgba(131, 210, 236, 0.8);
+  border-radius: 50%;
+  padding: 15px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease;
+  width: 50px;
+  height: 50px;
+}
+
+/* Movimento dell'icona */
+.move-right {
+  transform: translateX(200px);
+}
+
+.move-left {
+  transform: translateX(0);
+}
+
+/* Layout per la lista dei report */
+.list-of-reports {
+  display: flex;
+  flex-wrap: wrap; /* Consente ai report di andare a capo quando necessario */
+  justify-content: center; /* Centra le schede orizzontalmente */
+  gap: 20px; /* Distanza tra le colonne e le righe */
+  padding: 20px;
+  max-width: 1200px; /* Limita la larghezza massima per il layout */
+  margin: 0 auto; /* Centra il contenitore della lista */
+}
+
+/* Styling delle card (report) */
+.report-card {
+  box-sizing: border-box;
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  width: 350px; /* Imposta una larghezza fissa per la card */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+}
+
+/* Effetto hover per le card */
+.report-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Stile per l'intestazione della scheda */
+.card-header {
+  font-size: 18px;
+  border-bottom: 2px solid #f1f1f1;
+  margin-bottom: 15px;
+  padding-bottom: 10px;
+}
+
+.card-body {
+  margin-top: 30px;
+  font-size: 14px;
+  line-height: 1.6;
+  color: #555;
+  word-wrap: break-word; /* Forza il wrapping del testo all'interno */
+  overflow-wrap: break-word; /* Garantisce che il testo lungo vada a capo */
+}
+
+.card-body p {
+  margin-bottom: 10px; /* Margine inferiore per separare i paragrafi */
+}
+
+/* Styling dei dettagli del perpetrator */
+.perpetrator-info p {
+  margin-left: 20px;
+  font-size: 13px;
+  color: #777;
+  word-wrap: break-word; /* Forza il wrapping del testo */
+  margin-bottom:12px;
+}
+
+.perpetrator-info {
+  margin-top: 15px;
+  padding-left: 10px;
+}
+
+/* Titolo dei dettagli */
+strong {
+  color: #333;
+}
+
+/* Responsività: rendi il layout più compatto su schermi più piccoli */
+@media (max-width: 600px) {
+  .report-card {
+    width: 100%; /* Le card occuperanno tutta la larghezza disponibile */
+    margin: 10px;
+    padding: 15px;
+  }
+
+  .card-header {
+    font-size: 16px;
+  }
+
+  .card-body {
+    font-size: 12px;
+  }
+}
+
+/* Footer */
+.footer {
+  position: static;
+  width: 100%;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+  bottom: 0;
+}

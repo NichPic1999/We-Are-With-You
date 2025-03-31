@@ -1,0 +1,53 @@
+<div class="container">
+  <!-- Sidebar e Toggle Icon -->
+  <div
+    class="sidebar-toggle-icon"
+    (click)="toggleSidebar()"
+    class="{{ isSidebarOpen ? 'move-right' : 'move-left' }}"
+    mat-mini-fab
+  >
+    <mat-icon>{{ isSidebarOpen ? 'keyboard_arrow_left' : 'keyboard_arrow_right' }}</mat-icon>
+  </div>
+
+  <div class="sidebar" [ngClass]="{ open: isSidebarOpen }">
+    <button (click)="onLogout()">Logout</button>
+  </div>
+
+  <div class="div-button">
+  <button (click)="verifyUpdate()">Update list</button>
+</div>
+
+  <!-- Contenuto principale -->
+  <div class="main-content">
+
+
+    <div *ngIf="listOfMatchingReports ; else noReports" class="list-of-reports">
+      <div *ngFor="let report of listOfMatchingReports" class="report-card">
+        <div class="card-header">
+          <p><strong>Victim:</strong> {{ report.User }}</p>
+        </div>
+        <div class="card-body">
+          <p><strong>Perpetrator:</strong></p>
+          <div class="perpetrator-info">
+            <p><strong>Email:</strong> {{ report.EmailPerpetrator }}</p>
+            <p><strong>Telephone Number:</strong> {{ report.TelephoneNumberPerpetrator }}</p>
+            <p><strong>Social Media URL:</strong> {{ report.SocialMediaURL }}</p>
+          </div>
+          <p><strong>Details:</strong> {{ report.Details }}</p>
+        </div>
+      </div>
+    </div>
+
+    <ng-template #noReports>
+      <div class="centered">
+        <p>Nessun report disponibile</p>
+      </div>
+    </ng-template>
+
+</div>
+  <!-- Footer -->
+  <footer class="footer">
+
+      <app-footer></app-footer>
+
+  </footer>

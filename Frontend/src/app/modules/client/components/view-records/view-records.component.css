@@ -1,0 +1,134 @@
+/* Gruppi di campi del form */
+.form-group {
+  display: grid;
+  grid-template-columns: 1fr 3fr; /* Due colonne: etichette e input */
+  align-items: center; /* Centra verticalmente le etichette e gli input */
+  gap: 15px; /* Spazio più ampio tra le colonne */
+  margin-bottom: 20px; /* Maggiore spazio tra i gruppi di campi */
+}
+
+.form-description {
+  width: 100%;
+  text-align: left;
+  font-size: 13px; /* Ridotto */
+  color: #666;
+  margin-bottom: 40px; /* Ridotto */
+  font-weight: 500;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+}
+
+label {
+  font-size: 13px;
+  color: #555;
+  text-align: right; /* Allinea il testo delle etichette a destra */
+  padding-right: 15px; /* Aumenta lo spazio tra etichetta e input */
+}
+
+input {
+  width: 80%; /* Ridotto rispetto al 100% */
+  padding: 5px; /* Spazio interno più contenuto */
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 13px;
+  box-sizing: border-box;
+}
+
+input:focus {
+  border-color: #66afe9;
+  outline: none;
+}
+
+/* Errori di validazione */
+.error-message {
+  color: red;
+  font-size: 12px;
+  margin-top: 10px; /* Maggiore spazio sopra il messaggio di errore */
+  grid-column: 1 / -1; /* Fa sì che il messaggio di errore occupi entrambe le colonne */
+}
+
+/* Contenitore degli input della passphrase */
+.input-container {
+  display: flex;
+  justify-content: space-between; /* Distribuisce gli input in modo equo */
+  gap: 2px; /* Ridotto lo spazio tra gli input */
+  width: 100%; /* Assicura che il contenitore occupi tutta la larghezza disponibile */
+}
+
+/* Stili per gli input della passphrase */
+.input-container input {
+  width: 20%; /* Ridotto per ottenere un aspetto compatto */
+  padding: 6px; /* Spazio interno leggermente compattato */
+  text-align: center;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 13px;
+  box-sizing: border-box; /* Assicura che il padding non influisca sulla larghezza */
+}
+
+/* Stili per i bottoni */
+.button-container {
+  display: flex;
+  justify-content: center;
+  gap: 20px; /* Maggiore spazio tra i bottoni */
+  margin-top: 30px; /* Distanza sopra i bottoni */
+}
+
+button {
+  padding: 10px 20px; /* Maggiore spazio interno */
+  font-size: 14px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+button.submit-btn {
+  background-color: #4CAF50; /* Verde */
+  color: white;
+}
+
+button.submit-btn:hover {
+  background-color: #45a049;
+}
+
+button.submit-btn:disabled {
+  background-color: #ddd;
+  cursor: not-allowed;
+}
+
+button.close-btn {
+  background-color: #f44336; /* Rosso */
+  color: white;
+}
+
+button.close-btn:hover {
+  background-color: #e53935;
+}
+
+button.close-btn:disabled {
+  background-color: #ddd;
+  cursor: not-allowed;
+}
+
+/* Spaziatura generale */
+.form-container {
+  padding-top: 40px; /* Maggiore spazio interno per il contenitore del form */
+  gap: 20px; /* Distanza tra i vari gruppi di campi */
+  box-sizing: border-box;
+}
+
+.center-container {
+  margin-top: 8%; /* Ridotto lo spazio sopra il contenitore della passphrase */
+  padding: 15px; /* Compattato il padding interno */
+  gap: 2px; /* Spazio tra gli elementi */
+  display: flex; /* Aggiunto per organizzare in riga */
+  align-items: center;
+  justify-content: center; /* Centra gli elementi orizzontalmente */
+}
+
+.center-container label {
+  font-size: 13px;
+  color: #555;
+  margin-right: 15px;
+}

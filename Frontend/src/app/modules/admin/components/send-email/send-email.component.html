@@ -1,0 +1,12 @@
+<div class="file-upload-container">
+  <h1>Select a file (JSON or CSV):</h1>
+
+  <form enctype="multipart/form-data">
+    <div class="form-group">
+      <input type="file" id="file" name="file" (change)="onFileSelected($event)" accept=".json,.csv" required>
+    </div>
+
+    <button type="button" (click)="onSubmit()">Choose a file</button>
+    <button type="button" (click)="close()" class="close-btn">Close</button>
+  </form>
+</div>

@@ -1,0 +1,48 @@
+.container {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin: auto;
+  text-align: center;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+button {
+  padding: 10px 8px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  margin: 10px; /* Distanza tra i bottoni */
+  display: inline-block; /* I bottoni si disporranno uno accanto all'altro */
+  box-sizing: border-box; /* Assicura che il padding non influenzi la larghezza */
+}
+
+button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+.file-details {
+  margin-top: 15px;
+}
+
+button.close-btn {
+  background-color: #f44336;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  font-size: 13px;
+}
+
+button.close-btn:hover {
+  background-color: #e53935;
+}
+
+button.close-btn:disabled {
+  background-color: #ddd;
+  cursor: not-allowed;
+}

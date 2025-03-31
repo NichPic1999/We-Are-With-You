@@ -1,0 +1,44 @@
+<div class="form-container">
+  <form [formGroup]="form">
+
+    <div class="form-description">
+      <label>Enter the exact informations of the perpetrator and the code you were given when you submitted the report.
+        <b>Please the email is mandatory.</b>
+      </label>
+    </div>
+
+    <div class="form-group">
+      <label for="email">Email:</label>
+      <input type="text" id="email" name="email" formControlName="email">
+    </div>
+
+    <div class="form-group">
+      <label for="telephone">Telephone number:</label>
+      <input type="text" id="telephone" name="telephone" formControlName="telephone">
+    </div>
+
+    <div class="form-group">
+      <label for="socialMedia">URL social media:</label>
+      <input type="text" id="socialMedia" name="socialMedia" formControlName="socialMedia">
+    </div>
+
+    <div *ngIf="formSubmitted && form.errors?.['atLeastOneRequired']" class="error-message">
+      Devi compilare almeno uno dei campi.
+    </div>
+  </form>
+</div>
+
+<div class="center-container">
+  <label for="passphrase">Passphrase:</label>
+  <div id="passphrase-input" class="input-container">
+    <input #inputField type="text" maxlength="4" id="part1" />
+    <input #inputField type="text" maxlength="4" id="part2" />
+    <input #inputField type="text" maxlength="4" id="part3" />
+    <input #inputField type="text" maxlength="4" id="part4" />
+  </div>
+</div>
+
+<div class="button-container">
+  <button (click)="close()" class="close-btn">Chiudi</button>
+  <button id="submit-btn" (click)="onSubmit()" class="submit-btn">Search</button>
+</div>

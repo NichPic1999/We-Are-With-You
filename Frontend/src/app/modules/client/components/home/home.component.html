@@ -1,0 +1,54 @@
+<div class="container">
+
+  <div
+    class="sidebar-toggle-icon"
+    (click)="toggleSidebar()"
+    class="{{ isSidebarOpen ? 'move-right' : 'move-left' }}"
+    mat-mini-fab
+  >
+    <mat-icon>
+      {{ isSidebarOpen ? 'keyboard_arrow_left' : 'keyboard_arrow_right' }}
+    </mat-icon>
+  </div>
+
+  <div class="sidebar" [ngClass]="{ open: isSidebarOpen }">
+    <button (click)="onLogout()">Logout</button>
+  </div>
+
+  <!-- Main Content -->
+  <div class="main-content">
+
+    <!-- Bottone Report (Visibile solo se nessuna sezione è aperta) -->
+    <button
+      class="main-button"
+      (click)="addSectionReport()"
+      *ngIf="!showInputRecordSection && !showViewsRecords"
+    >
+      Report
+    </button>
+
+    <!-- Sezione Input Record -->
+    <app-input-record
+      *ngIf="showInputRecordSection"
+      [preloadedData]="reportData"
+      [mode]="reportData ? 'edit' : 'create'"
+      (closed)="showInputRecordSection = false"
+    ></app-input-record>
+
+    <!-- Bottone View Reports (Visibile solo se nessuna sezione è aperta) -->
+    <button
+      class="main-button"
+      (click)="addSectionViewReports()"
+      *ngIf="!showInputRecordSection && !showViewsRecords"
+    >
+      View reports
+    </button>
+
+    <!-- Sezione View Reports -->
+    <app-view-records
+      *ngIf="showViewsRecords"
+      (dataSelected)="handleReportData($event)"
+      (closed)="showViewsRecords = false"
+    ></app-view-records>
+  </div>
+</div>

@@ -1,0 +1,27 @@
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+/* Wrapper principale che contiene tutto il contenuto */
+.container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+}
+
+/* L'area principale che occupa lo spazio disponibile */
+.main-content {
+  flex: 1; /* Fa sì che questa sezione prenda tutto lo spazio disponibile */
+  overflow-y: auto; /* Permette lo scorrimento se necessario */
+}
+
+
+.footer {
+  background-color: #f8f9fa;
+  text-align: center;
+  padding: 10px;
+  position: relative;
+  bottom: 0;
+  width: 100%;
+}

@@ -1,0 +1,104 @@
+.container {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start ;
+  min-height: calc(100vh - 228px);
+  width: 100%;
+  overflow: visible;
+  margin: auto;
+}
+
+.sidebar {
+  width: 200px;
+  background-color: rgba(131, 210, 236, 0.8);
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  position: fixed;
+  left: -250px;
+  top: 0;
+  height: 100%;
+  transition: left 0.3s ease;
+}
+
+/* Quando la sidebar è aperta */
+.sidebar.open {
+  left: 0;
+}
+
+/* Stili per i pulsanti all'interno della sidebar */
+.sidebar button {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  background-color: #444;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  border-radius: 20px;
+
+}
+
+/* Effetto hover per i pulsanti nella sidebar */
+.sidebar button:hover {
+  background-color: #555;
+}
+
+/* Stili per l'icona che apre/chiude la sidebar */
+.sidebar-toggle-icon {
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  left: 50px;
+  top: 30px;
+  cursor: pointer;
+  background-color: rgba(131, 210, 236, 0.8);
+  border-radius: 50%;
+  padding: 15px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease;
+  width: 50px;
+  height: 50px;
+}
+
+/* Stili per il movimento dell'icona */
+.move-right {
+  transform: translateX(200px);
+}
+
+.move-left {
+  transform: translateX(0);
+}
+
+.main-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+  width: 100%
+}
+
+/* Stili per i pulsanti nella sezione principale */
+.main-button {
+  padding: 15px 30px;
+  width: 150px;
+  height: 50px;
+  margin-top: 3%;
+  overflow: visible;
+  background-color: rgba(131, 210, 236, 0.8);;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  box-sizing: border-box;
+  transition: background-color 0.3s;
+  border-radius: 5%;
+}
+
+/* Effetto hover per i pulsanti nella sezione principale */
+.main-button:hover {
+  background-color: rgba(131, 210, 236, 0.8);;
+}

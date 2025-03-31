@@ -1,0 +1,39 @@
+<div class="container">
+
+  <div
+  class="sidebar-toggle-icon"
+  (click)="toggleSidebar()"
+  class="{{ isSidebarOpen ? 'move-right' : 'move-left' }}"
+  mat-mini-fab
+>
+  <mat-icon>
+    {{ isSidebarOpen ? 'keyboard_arrow_left' : 'keyboard_arrow_right' }}
+  </mat-icon>
+</div>
+
+<div class="sidebar" [ngClass]="{ open: isSidebarOpen }">
+  <button (click)="onLogout()">Logout</button>
+</div>
+
+<div class="button-container">
+
+  <button *ngIf="!buttonsHidden && !showRegisterLawyerSection" class="btn" (click)="addSectionRegisterLawyer()">
+    Add lawyer
+  </button>
+  <button *ngIf="!buttonsHidden && !showEmailSendsSection" class="btn" (click)="sendEmails()">
+    Send emails
+  </button>
+</div>
+
+<app-register-lawyer
+  *ngIf="showRegisterLawyerSection"
+  (closed)=" onCloseRegisterLawyer()"
+></app-register-lawyer>
+
+<app-send-email
+*ngIf="showEmailSendsSection"
+
+  (closed)=" onCloseSendEmails()"
+></app-send-email>
+
+</div>

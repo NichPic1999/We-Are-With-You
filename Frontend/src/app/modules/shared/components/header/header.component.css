@@ -1,0 +1,30 @@
+.app-header {
+  display: flex;
+  justify-content: right;
+  padding: 10px 20px;
+  background: radial-gradient(circle, rgba(255,255,255,1) 18%, rgba(255,230,248,1) 49%, rgba(184,245,255,1) 89%);
+  color: black;
+}
+
+.logo-container {
+  display: flex;
+  align-items:center ;
+  justify-content: right;;
+  flex-direction: row;
+  height: 30%;
+  width: 30%;
+  margin-top: 1.0%;
+  margin-right: 4%;
+
+}
+
+.logo {
+  width: 20%;
+  height: 20%;
+}
+
+.app-name h1 {
+  margin: 0;
+  font-size: 18px;
+
+}

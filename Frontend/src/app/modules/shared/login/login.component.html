@@ -1,0 +1,82 @@
+<div class="body-container">
+  <div class="login">
+    <h2>Login!</h2>
+
+    <form [formGroup]="loginForm" (ngSubmit)="onLogin()">
+
+      <div class="label-button">
+        <label class="role-label">
+          <span
+            (click)="selectRole('client')"
+            class="role-circle"
+            [ngClass]="{ selected: selectedRole === 'client' }"
+          ></span>
+          <p>Client</p>
+        </label>
+
+        <label class="role-label">
+          <span
+            (click)="selectRole('operator')"
+            class="role-circle"
+            [ngClass]="{ selected: selectedRole === 'operator' }"
+          ></span>
+          <p> Operator</p>
+        </label>
+      </div>
+
+      <div *ngIf="selectedRole === 'operator'" class="toggle-container">
+        <label class="toggle-switch">
+          <h5>I'm a lawyer:</h5>
+          <input type="checkbox" formControlName="operator">
+          <span class="slider"></span>
+        </label>
+      </div>
+
+      <div class="input-box">
+        <input
+          type="email"
+          id="email"
+          name="email"
+          placeholder="Email"
+          formControlName="email"
+          required
+          pattern="[a-z0-9\._%\+\-]+@[a-z0-9\.\-]+\.[a-z]{2,}$"
+        />
+        <div *ngIf="loginForm.controls.email.invalid && (loginForm.controls.email.dirty || loginForm.controls.email.touched)">
+          <small class="block p-error">
+            <span *ngIf="loginForm.controls.email.hasError('required')">Email is required</span>
+            <span *ngIf="loginForm.controls.email.hasError('pattern')">Email is invalid</span>
+          </small>
+        </div>
+      </div>
+
+      <div class="input-box">
+        <input
+          type="password"
+          id="password"
+          name="password"
+          placeholder="Password"
+          formControlName="password"
+          required
+        />
+        <div *ngIf="loginForm.controls.password.invalid && (loginForm.controls.password.dirty || loginForm.controls.password.touched)">
+          <small class="block p-error">Password is required</small>
+        </div>
+      </div>
+
+      <button
+        type="submit"
+        class="btn btn-signin"
+        [class.disabled]="loginForm.invalid"
+        [disabled]="loginForm.invalid"
+      >
+        Sign In
+      </button>
+    </form>
+  </div>
+
+  <!-- Aggiunta dell'immagine -->
+  <div class="image-container">
+    <img src="images/logo.png" alt="Logo" class="logo" />
+  </div>
+</div>
